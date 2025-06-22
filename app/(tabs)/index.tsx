@@ -1,75 +1,73 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
+import styles from './styles';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 
-export default function HomeScreen() {
+// Зачем нужно определять интерфейс для типа пользователя я не понял, но без этого не работает.
+interface User {
+  id: number;
+  // Добавьте другие свойства пользователя, которые ожидаете с сервера
+  // например: name: string;
+}
+// Это будем говорить материнская функция... 
+export default function HelloWorld() {
+    // Состояние для хранения данных пользователя которые мы планируем забрать с сервера и переделать из джейсона. 
+  // потом их можно будет использовать как user.id или user.name и т.п.
+  // Указываем тип User | null, так как изначально данных нет
+  const [user, setUser] = useState<User | null>(null);
+  // Состояние для inputId (добавил, так как он используется в запросе). Но для начала в запрос 
+  // пока это состояние не использую
+  const [inputId, setInputId] = useState<string>('');
+  // Асинхронная функция для получения данных пользователя с сервера
+  async function fetchUsers() {
+    try {
+      // Делаем запрос к серверу изначально закомментировал запрос где будет использоваться
+      //принимаемое значение и формы
+      // const response = await fetch(`http://127.0.0.1:811/get-items/${inputId}`);
+      // а в этом запросе для простоты зафиксировал... Но не срабатывает, потому что что-то с вервером или я не правильно фиксируюсь
+      const Znacheniya = await fetch(`http://127.0.0.1:811/get-items/2`);
+      
+      // Проверяем, что запрос успешен... Эта штука выводит LOADING
+      if (!Znacheniya.ok) {
+        throw new Error(`HTTP error! status: ${Znacheniya.status}`);
+      }
+      
+      // забираем  JSON ответ Вот тут немного не разобрал, немного странный синтаксис
+      const data = await Znacheniya.json();
+      // он зачемто предлагал вот так
+      // const data: User = await Znacheniya.json();
+
+      // Обновляем состояние с полученными данными
+      setUser(data);
+      
+    } catch (error) {
+      // Обрабатываем возможные ошибки
+      console.error('Error fetching user data:', error);
+    }
+  }
+  // это условие не дает постоянно запрашивать функцию и это ПЛОХО, Дима хочет все переписать и улучшить.
+  if (!user) fetchUsers();
+  
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">ПРИВЕТ!!!!! Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    
+    <View style={styles.motherbox}>
+      <View style={styles.sectors}>
+      <View style={styles.subsectors}>
+        <View style={styles.spotrbox}></View>
+        <View style={styles.spotrbox}></View>
+        <View style={styles.spotrbox}></View>
+        <View style={styles.spotrbox}></View>
+
+      </View>
+      </View>
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello World</Text>
+      {/* Отображаем ID пользователя, если данные загружены */}
+      <Text style={styles.text}>{user ? user.id : 'Loading...'}</Text>
+      {/* если делаю без всякого, то он пишет что значение 0... прошлый раз я решал проблемы тем что задавал по умолчанию значение  */}
+      {/* <Text style={styles.text}>{user.id}</Text> */}
+    </View>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
