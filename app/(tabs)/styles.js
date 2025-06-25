@@ -8,22 +8,50 @@ flex: 1,
 overflowX: 'hidden', // запрещает горизонтальную прокрутку
   },
 
+underSector: {
+borderRadius: 10, 
+overflowX: 'hidden', // запрещает горизонтальную прокрутку
+backgroundColor: '#CFCFCF',
+borderRadius: 10, 
+margin:5,
+
+  },
+
 sectors: {
 backgroundColor: '#CFCFCF',
 overflow: 'scroll', //- разрешает горизонтальный скрол внутри 
+
   },
 
   // субсектор прокручивается по горизонтали внутри сетора вместе с боксами
 subsectors: { 
 backgroundColor: '#CFCFCF',
 flexDirection: 'row',   // располагаем элементы в линию
-justifyContent: 'space-between', // равномерное распределение по оси X
-paddingHorizontal: 20,   // отступ слева и справа для контейнера
+paddingHorizontal: 10,   // отступ слева и справа для контейнера
+borderRadius: 10, 
+padding: 20,
+alignItems: 'center',
   },
 
 spotrbox: {
-width: 120,          // ширина квадрата
-height: 140,         // высота квадрата
+width: 130,          // ширина квадрата
+height: 150,         // высота квадрата
+backgroundColor: '#E5E5E5', // цвет фона
+marginHorizontal: 10, // расстояние между элементами по горизонтали
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+  },
+
+levelbox: {
+width: 100,          // ширина квадрата
+height: 100,         // высота квадрата
+backgroundColor: '#E5E5E5', // цвет фона
+marginHorizontal: 10, // расстояние между элементами по горизонтали
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+  },
+
+typebox: {
+width: 110,          // ширина квадрата
+height: 100,         // высота квадрата
 backgroundColor: '#E5E5E5', // цвет фона
 marginHorizontal: 10, // расстояние между элементами по горизонтали
 borderRadius: 10,     // небольшой радиус для углов (опционально)
@@ -36,8 +64,16 @@ borderRadius: 10,     // небольшой радиус для углов (оп
     padding: 20,
   },
   text: {
-    fontSize: 50,
+    fontSize: 15,
     color: '#333',
+    padding: 10,
+    
+  },
+
+  backgroundImage: {
+    width: '50%', // Размер изображения — 50% от контейнера
+    height: '50%',
+    alignSelf: 'center', // Центрирует по горизонтали
   },
 });
 

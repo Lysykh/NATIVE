@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { Image, ImageBackground, Text, View } from 'react-native';
 import styles from './styles';
+
+
 
 
 // Зачем нужно определять интерфейс для типа пользователя я не понял, но без этого не работает.
@@ -25,7 +27,7 @@ export default function HelloWorld() {
       //принимаемое значение и формы
       // const response = await fetch(`http://127.0.0.1:811/get-items/${inputId}`);
       // а в этом запросе для простоты зафиксировал... Но не срабатывает, потому что что-то с вервером или я не правильно фиксируюсь
-      const Znacheniya = await fetch(`http://127.0.0.1:811/get-items/2`);
+      const Znacheniya = await fetch(`http://127.0.0.1:811/get-items/1`);
       
       // Проверяем, что запрос успешен... Эта штука выводит LOADING
       if (!Znacheniya.ok) {
@@ -49,18 +51,122 @@ export default function HelloWorld() {
   if (!user) fetchUsers();
   
 
+
+
   return (
     
     <View style={styles.motherbox}>
+    <View style={{  justifyContent: 'center', alignItems: 'flex-end', marginHorizontal: 20 }}>
+      <Image 
+        source={require('./logo.png')} // Проверьте правильный путь к файлу
+        alt="Logo"
+        style={{ width: '50%', height: 70}} // Добавили стили для отображения
+        resizeMode="contain"
+        
+      />
+    </View>
+
+      <View style={styles.underSector}>
+          <Text style={styles.text}>ВИД СПОРТА</Text>
       <View style={styles.sectors}>
       <View style={styles.subsectors}>
-        <View style={styles.spotrbox}></View>
-        <View style={styles.spotrbox}></View>
-        <View style={styles.spotrbox}></View>
+        <ImageBackground
+              source={require('./swim.png')}
+              style={styles.spotrbox}
+              resizeMode="contain"
+              imageStyle={styles.backgroundImage}
+            >
+              {/* Контент внутри первого sportbox */}
+            </ImageBackground>
+            <ImageBackground
+              source={require('./run.png')}
+              style={styles.spotrbox}
+              resizeMode="contain"
+              imageStyle={styles.backgroundImage}
+            >
+              {/* Контент внутри первого sportbox */}
+            </ImageBackground>
+            <ImageBackground
+              source={require('./bike.png')}
+              style={styles.spotrbox}
+              resizeMode="contain"
+              imageStyle={styles.backgroundImage}
+            >
+              {/* Контент внутри первого sportbox */}
+            </ImageBackground>
+          
+
+
         <View style={styles.spotrbox}></View>
 
       </View>
       </View>
+      </View>
+
+
+      <View style={styles.underSector}>
+          <Text style={styles.text}>ТВОЙ СПОРТИВНЫЙ УРОВЕНЬ</Text>
+      <View style={styles.sectors}>
+      <View style={styles.subsectors}>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+      </View>
+      </View>
+      </View>
+      
+            <View style={styles.underSector}>
+          <Text style={styles.text}>ЧТО ТРЕНИРУЕМ</Text>
+      <View style={styles.sectors}>
+      <View style={styles.subsectors}>
+        <View style={styles.typebox}></View>
+        <View style={styles.typebox}></View>
+        <View style={styles.typebox}></View>
+      </View>
+      </View>
+      </View>
+      
+      <View style={styles.underSector}>
+          <Text style={styles.text}>УРОВЕНЬ СЛОЖНОСТИ ТРЕНИРОВКИ</Text>
+      <View style={styles.sectors}>
+      <View style={styles.subsectors}>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+        <View style={styles.levelbox}></View>
+      </View>
+      </View>
+      </View>
+
+   {/* <View style={styles.container}> */}
+      {/* Previous content */}
+
+      {/* <View style={{ bottom: 0, width: '100%', padding: 20 }}>
+          <TextInput
+              placeholder="Enter ID"
+              
+        
+              style={{
+                  marginBottom: 10,
+                  padding: 10,
+                  borderRadius: 5,
+                  borderWidth: 1
+              }}
+          />
+          
+          <Button 
+              title="Submit" 
+            
+          />
+      </View>
+    </View> */}
+
+
     <View style={styles.container}>
       <Text style={styles.text}>Hello World</Text>
       {/* Отображаем ID пользователя, если данные загружены */}
