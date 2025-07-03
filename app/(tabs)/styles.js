@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   motherbox: {
-backgroundColor: '#C0C1C1',
+backgroundColor: '#E7E7E7',
 flex: 1,
 overflowX: 'hidden', // запрещает горизонтальную прокрутку
   },
@@ -11,21 +11,21 @@ overflowX: 'hidden', // запрещает горизонтальную прок
 underSector: {
 borderRadius: 10, 
 overflowX: 'hidden', // запрещает горизонтальную прокрутку
-backgroundColor: '#CFCFCF',
+backgroundColor: '#F2F2F2',
 borderRadius: 10, 
 margin:5,
 
   },
 
 sectors: {
-backgroundColor: '#CFCFCF',
+backgroundColor: '#F2F2F2',
 overflow: 'scroll', //- разрешает горизонтальный скрол внутри 
 
   },
 
   // субсектор прокручивается по горизонтали внутри сетора вместе с боксами
 subsectors: { 
-backgroundColor: '#CFCFCF',
+backgroundColor: '#F2F2F2',
 flexDirection: 'row',   // располагаем элементы в линию
 paddingHorizontal: 10,   // отступ слева и справа для контейнера
 borderRadius: 10, 
@@ -36,7 +36,7 @@ alignItems: 'center',
 spotrbox: {
 width: 130,          // ширина квадрата
 height: 150,         // высота квадрата
-backgroundColor: '#E5E5E5', // цвет фона
+backgroundColor: '#FFFFFF', // цвет фона
 marginHorizontal: 10, // расстояние между элементами по горизонтали
 borderRadius: 10,     // небольшой радиус для углов (опционально)
   },
@@ -71,8 +71,8 @@ borderRadius: 10,     // небольшой радиус для углов (оп
   },
 
   backgroundImage: {
-    width: '50%', // Размер изображения — 50% от контейнера
-    height: '50%',
+    width: '70%', // Размер изображения — 50% от контейнера
+    height: '70%',
     alignSelf: 'center', // Центрирует по горизонтали
   },
 });
