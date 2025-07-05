@@ -102,6 +102,22 @@ export default function HelloWorld() {
       </View>
       </View>
 
+      <View style={styles.underSector}>
+          <Text style={styles.text}>УРОВЕНЬ СЛОЖНОСТИ ТРЕНИРОВКИ</Text>
+      <View style={styles.sectors}>
+      <View style={styles.subsectors}>
+
+        <View style={styles.levelDisplay}></View>
+        
+        <View style={styles.buttomBox}>
+          <View style={styles.buttomUp}></View>
+          <View style={styles.buttomDown}></View>
+        </View>
+
+      </View>
+      </View>
+      </View>
+
 
       <View style={styles.underSector}>
           <Text style={styles.text}>ТВОЙ СПОРТИВНЫЙ УРОВЕНЬ</Text>
@@ -117,30 +133,20 @@ export default function HelloWorld() {
       </View>
       </View>
       
-            <View style={styles.underSector}>
-          <Text style={styles.text}>ЧТО ТРЕНИРУЕМ</Text>
+      <View style={styles.underSector}>   
       <View style={styles.sectors}>
-      <View style={styles.subsectors}>
-        <View style={styles.typebox}></View>
-        <View style={styles.typebox}></View>
-        <View style={styles.typebox}></View>
-      </View>
-      </View>
-      </View>
       
-      <View style={styles.underSector}>
-          <Text style={styles.text}>УРОВЕНЬ СЛОЖНОСТИ ТРЕНИРОВКИ</Text>
-      <View style={styles.sectors}>
-      <View style={styles.subsectors}>
-        <View style={styles.levelbox}></View>
-        <View style={styles.levelbox}></View>
-        <View style={styles.levelbox}></View>
-        <View style={styles.levelbox}></View>
-        <View style={styles.levelbox}></View>
-        <View style={styles.levelbox}></View>
+        <View style={styles.buttomGO}>
+<Text style={styles.textButtomGo}>СОЗДАТЬ ТРЕНИРОВКУ</Text>
+
+        </View>
+
+      
       </View>
       </View>
-      </View>
+
+      
+
 
    {/* <View style={styles.container}> */}
       {/* Previous content */}

@@ -42,11 +42,18 @@ borderRadius: 10,     // небольшой радиус для углов (оп
   },
 
 levelbox: {
-width: 100,          // ширина квадрата
-height: 100,         // высота квадрата
+width: 70,          // ширина квадрата
+height: 70,         // высота квадрата
 backgroundColor: '#E5E5E5', // цвет фона
 marginHorizontal: 10, // расстояние между элементами по горизонтали
 borderRadius: 10,     // небольшой радиус для углов (опционально)
+
+elevation: 3,              // тень на Android
+shadowColor: '#000',       // тень на iOS
+shadowOffset: { width: 0, height: 2 },  // смещение тени
+shadowOpacity: 0.2,        // прозрачность
+shadowRadius: 4,           // размытие
+
   },
 
 typebox: {
@@ -69,6 +76,60 @@ borderRadius: 10,     // небольшой радиус для углов (оп
     padding: 10,
     
   },
+    textButtomGo: {
+    fontSize: 15,
+    color: '#FFFFFF',
+    padding: 10,
+    alignSelf: 'center', // Центрирует по горизонтали
+    
+  },
+
+levelDisplay: {
+width: 200,          // ширина квадрата
+height: 150,         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+alignItems: 'center',      // центрирование по горизонтали
+justifyContent: 'center',  // центрирование по вертикали
+
+  },
+buttomBox: {
+width: 200,          // ширина квадрата
+height: 200,         // высота квадрата
+backgroundColor: '#F2F2F2', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+alignItems: 'center',      // центрирование по горизонтали
+justifyContent: 'center',  // центрирование по вертикали
+
+  },
+  buttomUp: {
+paddingVertical: 10,   // отступ слева и справа для контейнера
+width: 150,          // ширина квадрата
+height: 60,         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+margin:10,
+
+  },
+  buttomDown: {
+paddingVertical: 10,   // отступ слева и справа для контейнера
+width: 150,          // ширина квадрата
+height: 60,         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+margin:10,
+
+  },
+  buttomGO: {
+paddingVertical: 10,   // отступ слева и справа для контейнера
+width: '100%',          // ширина квадрата
+height: 60,         // высота квадрата
+backgroundColor: '#DF9C00', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+
+
+  },
+
 
   backgroundImage: {
     width: '70%', // Размер изображения — 50% от контейнера
