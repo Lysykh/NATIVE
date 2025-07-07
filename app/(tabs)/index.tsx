@@ -70,7 +70,7 @@ export default function HelloWorld() {
       <View style={styles.sectors}>
       <View style={styles.subsectors}>
         <ImageBackground
-              source={require('./swim.png')}
+              source={require('./swim_orange.png')}
               style={styles.spotrbox}
               resizeMode="contain"
               imageStyle={styles.backgroundImage}
@@ -78,7 +78,7 @@ export default function HelloWorld() {
               {/* Контент внутри первого sportbox */}
             </ImageBackground>
             <ImageBackground
-              source={require('./run.png')}
+              source={require('./run_grey.png')}
               style={styles.spotrbox}
               resizeMode="contain"
               imageStyle={styles.backgroundImage}
@@ -86,7 +86,7 @@ export default function HelloWorld() {
               {/* Контент внутри первого sportbox */}
             </ImageBackground>
             <ImageBackground
-              source={require('./bike.png')}
+              source={require('./bike_grey.png')}
               style={styles.spotrbox}
               resizeMode="contain"
               imageStyle={styles.backgroundImage}
@@ -107,17 +107,38 @@ export default function HelloWorld() {
       <View style={styles.sectors}>
       <View style={styles.subsectors}>
 
-        <View style={styles.levelDisplay}></View>
+        <View style={styles.levelDisplay}>
+          <Text style={styles.levelDisplayText}>ПРОШЛАЯ 12</Text>
+          <View style={styles.levelDisplayMain}>
+            <Text style={styles.levelDisplayMainText}>15</Text>
+          </View>
+          <View style={styles.levelDisplayStatus}></View>
+
+
+        </View>
         
         <View style={styles.buttomBox}>
-          <View style={styles.buttomUp}></View>
-          <View style={styles.buttomDown}></View>
+          <View style={styles.buttomUp}>+</View>
+          <View style={styles.buttomDown}>-</View>
         </View>
 
       </View>
       </View>
       </View>
 
+
+
+      
+      <View style={styles.underSector}>   
+      <View style={styles.sectors}>
+      
+        <View style={styles.buttomGO}>
+<Text style={styles.textButtomGo}>СОЗДАТЬ ТРЕНИРОВКУ</Text>
+
+        </View>
+      
+      </View>
+      </View>
 
       <View style={styles.underSector}>
           <Text style={styles.text}>ТВОЙ СПОРТИВНЫЙ УРОВЕНЬ</Text>
@@ -130,18 +151,6 @@ export default function HelloWorld() {
         <View style={styles.levelbox}></View>
         <View style={styles.levelbox}></View>
       </View>
-      </View>
-      </View>
-      
-      <View style={styles.underSector}>   
-      <View style={styles.sectors}>
-      
-        <View style={styles.buttomGO}>
-<Text style={styles.textButtomGo}>СОЗДАТЬ ТРЕНИРОВКУ</Text>
-
-        </View>
-
-      
       </View>
       </View>
 

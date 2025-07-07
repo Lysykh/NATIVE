@@ -91,8 +91,56 @@ backgroundColor: '#FFFFFF', // цвет фона
 borderRadius: 10,     // небольшой радиус для углов (опционально)
 alignItems: 'center',      // центрирование по горизонтали
 justifyContent: 'center',  // центрирование по вертикали
+flexDirection: 'column', // Вертикальное расположение (можно опустить, т.к. это значение по умолчанию)
+borderWidth: 0,          // Толщина рамки
+borderColor: '#000000',  // Чёрный цвет 
+},
+
+levelDisplayText: {
+borderWidth: 0,          // Толщина рамки
+borderColor: '#000000',  // Чёрный цвет
+width: '100%',          // ширина квадрата
+height: 25,         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+fontSize: 15,
+color: '#333',
+alignItems: 'right',      // центрирование по горизонтали
+justifyContent: 'center',  // центрирование по вертикали
+  },
+
+levelDisplayMain: {
+borderWidth: 0,          // Толщина рамки
+borderColor: '#000000',  // Чёрный цвет
+width: '100%',          // ширина квадрата
+height: 100,         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+alignItems: 'center',      // центрирование по горизонтали
+justifyContent: 'center',  // центрирование по вертикали
 
   },
+levelDisplayMainText: {
+borderWidth: 0,          // Толщина рамки
+borderColor: '#000000',  // Чёрный цвет
+fontSize: 25,
+color: '#333',
+  },
+
+
+  levelDisplayStatus: {
+borderWidth: 0,          // Толщина рамки
+borderColor: '#000000',  // Чёрный цвет
+width: '100%',          // ширина квадрата
+height: 25,         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+alignItems: 'center',      // центрирование по горизонтали
+justifyContent: 'center',  // центрирование по вертикали
+
+  },
+
+
+
 buttomBox: {
 width: 200,          // ширина квадрата
 height: 200,         // высота квадрата
