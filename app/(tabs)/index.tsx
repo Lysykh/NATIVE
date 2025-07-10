@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Image, ImageBackground, Text, View } from 'react-native';
+import SportSelect from './sportSwim';
 import styles from './styles';
 
 
@@ -65,10 +66,14 @@ export default function HelloWorld() {
       />
     </View>
 
+ <SportSelect />
+
       <View style={styles.underSector}>
           <Text style={styles.text}>ВИД СПОРТА</Text>
       <View style={styles.sectors}>
       <View style={styles.subsectors}>
+
+      
         <ImageBackground
               source={require('./swim_orange.png')}
               style={styles.spotrbox}
@@ -109,10 +114,26 @@ export default function HelloWorld() {
 
         <View style={styles.levelDisplay}>
           <Text style={styles.levelDisplayText}>ПРОШЛАЯ 12</Text>
+              <Text style={[styles.text, {marginLeft: 10}]}>
+      {(() => {
+        const a = 5;
+        const b = 3;
+        const result = a + b;
+        return result;
+      })()}
+    </Text>
+
           <View style={styles.levelDisplayMain}>
             <Text style={styles.levelDisplayMainText}>15</Text>
           </View>
-          <View style={styles.levelDisplayStatus}></View>
+          <View style={styles.levelDisplayStatus}>
+            <Image 
+        source={require('./dot_green.png')} // Проверьте правильный путь к файлу
+        alt="Logo"
+        style={{ width: '20%', height: 70}} // Добавили стили для отображения
+        resizeMode="contain"
+            />
+          </View>
 
 
         </View>
