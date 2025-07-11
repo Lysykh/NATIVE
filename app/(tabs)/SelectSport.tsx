@@ -4,7 +4,7 @@ import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles'; // Импортируем стили из отдельного файла
 
 // Создаем основной компонент с использованием function declaration
-function SportSwim() {
+function SportSelect() {
   // Состояние для хранения выбранного вида спорта
   // Изначально null - ничего не выбрано
   const [sport, setSport] = useState(null);
@@ -79,6 +79,18 @@ function SportSwim() {
               resizeMode="contain"    // Режим отображения изображения
               imageStyle={styles.backgroundImage}
             >
+
+
+
+{
+// выводим строку с обоими значениями
+(() => {
+  const a = sport;
+  const b = swimType;
+  
+  return `${a} ${b}`;
+})()}
+
               {/* Здесь может быть дополнительный контент */}
             </ImageBackground>
           </TouchableOpacity>
@@ -112,4 +124,4 @@ function SportSwim() {
 }
 
 // Экспортируем компонент для использования в других частях приложения
-export default SportSwim;
+export default SportSelect;

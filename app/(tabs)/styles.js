@@ -96,6 +96,10 @@ borderWidth: 0,          // Толщина рамки
 borderColor: '#000000',  // Чёрный цвет 
 },
 
+  selectedBox: {
+    backgroundColor: '#BCBCBC',
+  },
+
 levelDisplayText: {
 borderWidth: 0,          // Толщина рамки
 borderColor: '#000000',  // Чёрный цвет
