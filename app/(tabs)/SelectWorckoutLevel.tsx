@@ -1,41 +1,30 @@
 // Импорт необходимых компонентов из React и React Native
-import React, { useState } from 'react';
+import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 
-// Основной компонент приложения
-function SelectLevel() {
-  // Использование хука состояния для хранения текущего уровня сложности
-  // Начальное значение - 15
-  const [level, setLevel] = useState(15);
+// Добавляем интерфейс для пропсов
+interface SelectLevelProps {
+  level: number;
+  setLevel: React.Dispatch<React.SetStateAction<number>>;
+}
 
-  // Функция для увеличения уровня сложности
+function SelectLevel({ level, setLevel }: SelectLevelProps) {
   function handleIncrement() {
-    // setLevel принимает функцию обновления, которая получает ПРЕДЫДУЩЕЕ значение состояния
-    // prevLevel - это предыдущее значение состояния level перед обновлением
-    // React автоматически передает это значение в функцию
-    setLevel(function(prevLevel) {
-      // Возвращаем новое значение: предыдущее значение + 1
-      return prevLevel + 1;
-    });
+    setLevel(prevLevel => prevLevel + 1);
   }
 
-  // Функция для уменьшения уровня сложности
   function handleDecrement() {
-    // Аналогично handleIncrement, но с проверкой, чтобы уровень не стал меньше 0
-    setLevel(function(prevLevel) {
-      // Если предыдущий уровень больше 0, уменьшаем на 1, иначе оставляем 0
-      return prevLevel > 0 ? prevLevel - 1 : 0;
-    });
+    setLevel(prevLevel => (prevLevel > 0 ? prevLevel - 1 : 0));
   }
 
-  // Вспомогательная функция для вычисления результата
   function calculateResult() {
     const a = 5;
     const b = 3;
-    const result = a + b; // Простое сложение для примера
+    const result = a + b;
     return result;
   }
+
 
   // Возвращаем JSX разметку компонента
   return (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 
+
 const SelectSportLevel = () => {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [selectedBox, setSelectedBox] = useState<number | null>(null);

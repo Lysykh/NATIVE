@@ -16,6 +16,11 @@ interface User {
 }
 // Это будем говорить материнская функция... 
 export default function HelloWorld() {
+
+
+  const [workoutLevel, setWorkoutLevel] = useState(15); // Добавляем состояние для уровня
+
+
     // Состояние для хранения данных пользователя которые мы планируем забрать с сервера и переделать из джейсона. 
   // потом их можно будет использовать как user.id или user.name и т.п.
   // Указываем тип User | null, так как изначально данных нет
@@ -44,6 +49,8 @@ export default function HelloWorld() {
 
       // Обновляем состояние с полученными данными
       setUser(data);
+
+    
       
     } catch (error) {
       // Обрабатываем возможные ошибки
@@ -72,7 +79,8 @@ export default function HelloWorld() {
 
  <SportSelect />
 
- <SelectLevel />
+ 
+ <SelectLevel level={workoutLevel} setLevel={setWorkoutLevel} />
 
 
       
@@ -81,6 +89,17 @@ export default function HelloWorld() {
       
         <View style={styles.buttomGO}>
 <Text style={styles.textButtomGo}>СОЗДАТЬ ТРЕНИРОВКУ</Text>
+
+<Text>Уровень + 2: {workoutLevel + 2}</Text>
+
+{/* {
+// ПРОБУЮ ВЫВОДИТЬ
+(() => {
+  const a = SelectLevel;
+  
+  return `${a}`;
+})()} */}
+
 
         </View>
       
