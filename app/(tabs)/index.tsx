@@ -1,10 +1,12 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import SportSelect from './SelectSport';
 import SelectSportLevel from './SelectSportLevel';
 import SelectLevel from './SelectWorckoutLevel';
 import styles from './styles';
-
+import WorckOutMain from './WorckOutMain';
+import WorckOut from './WorckOutTop';
 
 
 
@@ -16,6 +18,15 @@ interface User {
 }
 // Это будем говорить материнская функция... 
 export default function HelloWorld() {
+
+  const navigation = useNavigation(); // Добавляем навигацию
+  
+// Добавляем состояния для показов и удаления компонентов в зависимости от кнопки
+  const [showComponents, setShowComponents] = useState({
+  sportSelect: true,
+  worckOut: false,
+  worckOutMain: false
+}); 
 
 
   const [workoutLevel, setWorkoutLevel] = useState(15); // Добавляем состояние для уровня
@@ -77,18 +88,34 @@ export default function HelloWorld() {
     </View>
 
 
- <SportSelect />
-
+{showComponents.sportSelect && <SportSelect />}
+{showComponents.worckOut && <WorckOut />}
+{showComponents.worckOutMain && <WorckOutMain />}
  
- <SelectLevel level={workoutLevel} setLevel={setWorkoutLevel} />
+ <SelectLevel level={workoutLevel} setLevel={setWorkoutLevel}/>
 
-
+            {/* Добавляем кнопку для перехода на новый экран */}
+      <TouchableOpacity onPress={() => navigation.navigate('NewScreen')}>
+        <Text style={{color: 'blue'}}>Перейти на новый экран</Text>
+      </TouchableOpacity>
       
       <View style={styles.underSector}>   
       <View style={styles.sectors}>
       
         <View style={styles.buttomGO}>
-<Text style={styles.textButtomGo}>СОЗДАТЬ ТРЕНИРОВКУ</Text>
+        
+<TouchableOpacity 
+  style={styles.buttomGO}
+  onPress={() => setShowComponents({
+    sportSelect: !showComponents.sportSelect,
+    worckOut: !showComponents.worckOut,
+    worckOutMain: !showComponents.worckOutMain
+  })}
+>
+            <Text style={styles.textButtomGo}>СОЗДАТЬ ТРЕНИРОВКУ</Text>
+            <Text>Уровень + 2: {workoutLevel + 2}</Text>
+          </TouchableOpacity>
+
 
 <Text>Уровень + 2: {workoutLevel + 2}</Text>
 

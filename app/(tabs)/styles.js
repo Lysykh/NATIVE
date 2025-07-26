@@ -143,6 +143,29 @@ justifyContent: 'center',  // центрирование по вертикали
 
   },
 
+WorckOutTop: {
+width: 'auto',          // ширина квадрата
+height: 100,         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+alignItems: 'center',      // центрирование по горизонтали
+justifyContent: 'center',  // центрирование по вертикали
+flexDirection: 'column', // Вертикальное расположение (можно опустить, т.к. это значение по умолчанию)
+borderWidth: 0,          // Толщина рамки
+borderColor: '#000000',  // Чёрный цвет 
+},
+
+WorckOutMain: {
+width: 'auto',          // ширина квадрата
+height: 'auto',         // высота квадрата
+backgroundColor: '#FFFFFF', // цвет фона
+borderRadius: 10,     // небольшой радиус для углов (опционально)
+alignItems: 'center',      // центрирование по горизонтали
+justifyContent: 'center',  // центрирование по вертикали
+flexDirection: 'column', // Вертикальное расположение (можно опустить, т.к. это значение по умолчанию)
+borderWidth: 0,          // Толщина рамки
+borderColor: '#000000',  // Чёрный цвет 
+},
 
 
 buttomBox: {
