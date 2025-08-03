@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Image, Text, View } from 'react-native';
+import CalcRun from './calculator/calc_run';
 import styles from './styles';
-import CalcRun from <calc_Run className="tsx"></calc_Run>;
 
 const WorckOutMain = () => {
 
@@ -301,7 +301,8 @@ const WorckOutMain = () => {
             {/* значения */}
             <View style={{ borderWidth: 0, borderColor: 'black', height: '100%' }}>   
                 <View style={{height:'50%', justifyContent: 'center' }}><Text> 8 : 15</Text></View>
-                <View style={{height:'50%', justifyContent: 'center' }}><Text> 60 : 15</Text></View>
+                <View style={{height:'50%', justifyContent: 'center' }}><Text> 60 : 15 ВСТАВЛЯЮ  </Text> <CalcRun a={60} b={15} /> </View>
+                
             </View>
              
      </View>       
