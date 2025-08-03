@@ -1,10 +1,13 @@
-// metro.config.js
-const {
-  wrapWithReanimatedMetroConfig,
-} = require('react-native-reanimated/metro-config');
+const { getDefaultConfig } = require('expo/metro-config');
 
-const config = {
-  // Your existing Metro configuration options
-};
+const config = getDefaultConfig(__dirname);
 
-module.exports = wrapWithReanimatedMetroConfig(config);
+config.resolver.assetExts.push(
+  'png',
+  'jpg',
+  'jpeg',
+  'gif',
+  'svg'
+);
+
+module.exports = config;
