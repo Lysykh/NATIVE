@@ -40,38 +40,40 @@ export default function HelloWorld() {
   // пока это состояние не использую
   const [inputId, setInputId] = useState<string>('');
   // Асинхронная функция для получения данных пользователя с сервера
-  async function fetchUsers() {
-    try {
-      // Делаем запрос к серверу изначально закомментировал запрос где будет использоваться
-      //принимаемое значение и формы
-      // const response = await fetch(`http://127.0.0.1:811/get-items/${inputId}`);
-      // а в этом запросе для простоты зафиксировал... Но не срабатывает, потому что что-то с вервером или я не правильно фиксируюсь
-      const Znacheniya = await fetch(`http://127.0.0.1:811/get-items/1`);
-      
-      // Проверяем, что запрос успешен... Эта штука выводит LOADING
-      if (!Znacheniya.ok) {
-        throw new Error(`HTTP error! status: ${Znacheniya.status}`);
-      }
-      
-      // забираем  JSON ответ Вот тут немного не разобрал, немного странный синтаксис
-      const data = await Znacheniya.json();
-      // он зачемто предлагал вот так
-      // const data: User = await Znacheniya.json();
 
-      // Обновляем состояние с полученными данными
-      setUser(data);
+// == начало FETCH ==   
+  // async function fetchUsers() {
+  //   try {
+  //     // Делаем запрос к серверу изначально закомментировал запрос где будет использоваться
+  //     //принимаемое значение и формы
+  //     // const response = await fetch(`http://127.0.0.1:811/get-items/${inputId}`);
+  //     // а в этом запросе для простоты зафиксировал... Но не срабатывает, потому что что-то с вервером или я не правильно фиксируюсь
+  //     const Znacheniya = await fetch(`http://127.0.0.1:811/get-items/1`);
+      
+  //     // Проверяем, что запрос успешен... Эта штука выводит LOADING
+  //     if (!Znacheniya.ok) {
+  //       throw new Error(`HTTP error! status: ${Znacheniya.status}`);
+  //     }
+      
+  //     // забираем  JSON ответ Вот тут немного не разобрал, немного странный синтаксис
+  //     const data = await Znacheniya.json();
+  //     // он зачемто предлагал вот так
+  //     // const data: User = await Znacheniya.json();
+
+  //     // Обновляем состояние с полученными данными
+  //     setUser(data);
 
     
       
-    } catch (error) {
-      // Обрабатываем возможные ошибки
-      console.error('Error fetching user data:', error);
-    }
-  }
-  // это условие не дает постоянно запрашивать функцию и это ПЛОХО, Дима хочет все переписать и улучшить.
-  if (!user) fetchUsers();
+  //   } catch (error) {
+  //     // Обрабатываем возможные ошибки
+  //     console.error('Error fetching user data:', error);
+  //   }
+  // }
+  // // это условие не дает постоянно запрашивать функцию и это ПЛОХО, Дима хочет все переписать и улучшить.
+  // if (!user) fetchUsers();
   
-
+// === конец FETCH ===
 
 
   return (
@@ -164,7 +166,7 @@ export default function HelloWorld() {
     <View style={styles.container}>
       <Text style={styles.text}>Hello World</Text>
       {/* Отображаем ID пользователя, если данные загружены */}
-      <Text style={styles.text}>{user ? user.id : 'Loading...'}</Text>
+      {/* <Text style={styles.text}>{user ? user.id : 'Loading...'}</Text> */}
       {/* если делаю без всякого, то он пишет что значение 0... прошлый раз я решал проблемы тем что задавал по умолчанию значение  */}
       {/* <Text style={styles.text}>{user.id}</Text> */}
     </View>

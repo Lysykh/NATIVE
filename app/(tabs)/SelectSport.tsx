@@ -82,14 +82,15 @@ function SportSelect() {
 
 
 
-{
+{/* {
 // выводим строку с обоими значениями
 (() => {
   const a = sport;
   const b = swimType;
   
   return `${a} ${b}`;
-})()}
+})
+()} */}
 
               {/* Здесь может быть дополнительный контент */}
             </ImageBackground>
