@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import SportSelect from './SelectSport';
 import SelectSportLevel from './SelectSportLevel';
